@@ -160,7 +160,6 @@ print(F.array)
 for word in words:
     
     print(F.read(word))
-    #print(code)
 
 F.inclose(8,'ih')
 
