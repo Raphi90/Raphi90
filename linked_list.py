@@ -1,12 +1,27 @@
+"""
+THE SINGLY LINKED LIST:
+This code implements a singly linked list in python.
+It is part of a project in which I implemented several fundamental datastructures mostly by using only tha standard library.
+Linked lists are common data structures and very efficient in space complexity compared to arrays for example.
+On the other hand they are more slowly than othe datastructures.
+This linked list is used for the hash table implementation in this project.
+The content can be printed by print(name_of_ll_instance)
+The linked list can be used as an iterable: see __next__ and __iter__
+It contains several methods to append new elemnts, print the elemt a specific position, erase elements, print the lentgh of a the linked list or search for one scecial element.
+Further there are exceptions if a method is used in a wrong way. For example if someone tries to delete an element at a position that exceeds the legth of the linked list.
+Author: Raphael Lermer
+"""
 
+
+#implementation of Node
 class Node:
-    
+    #Node is fundamental to the linked list. Nodes are the small elements which build the linked list. 
     def __init__(self, data=None):
         
-        self.data = data
+        self.data = data #data represents the stored data of the Node. This can be any data type in python. For example a 
         self.next = None
 
-class Linked_List:
+class LinkedList:
     
     def __init__(self):
         
@@ -23,9 +38,9 @@ class Linked_List:
         c = self.ground_index
         
         current_node = self.head
-        #print(current_node.data)
+        
         while current_node != None:
-            #print(current_node.data)
+            
             if c >= 0:
                 
                 if c > 0:
@@ -194,12 +209,13 @@ if __name__ == '__main__':
 
     N1 = Node(4)
 
-    List1 = Linked_List()
+    List1 = LinkedList()
     print(List1.length())
     List1.append(5)
     print(List1.length())
     List1.append(3)
     List1.append(8)
+    List1.append('c')
     List1.append(2)
     List1.append(1)
     print(List1.length())
@@ -237,5 +253,4 @@ if __name__ == '__main__':
         print(n)
         print(List1.length())
         
-    List1.paste(2,20)
-    print(List1.length())
+    
