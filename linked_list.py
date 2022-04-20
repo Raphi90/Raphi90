@@ -1,5 +1,7 @@
 """
+
 THE SINGLY LINKED LIST:
+
 This code implements a singly linked list in python.
 It is part of a project in which I implemented several fundamental datastructures mostly by using only tha standard library.
 Linked lists are common data structures and very efficient in space complexity compared to arrays for example.
@@ -10,10 +12,11 @@ The linked list can be used as an iterable: see __next__ and __iter__
 It contains several methods to append new elemnts, print the elemt a specific position, erase elements, print the lentgh of a the linked list or search for one scecial element.
 Further there are exceptions if a method is used in a wrong way. For example if someone tries to delete an element at a position that exceeds the legth of the linked list.
 Author: Raphael Lermer
+
 """
 
 
-#implementation of Node
+#Implementation of Node
 class Node:
     #Node is fundamental to the linked list. Nodes are the small elements which build the linked list. 
     def __init__(self, data=None):
@@ -30,7 +33,7 @@ class LinkedList:
         self.pointer_for_iteration = self.head
         self.len = 0
         #self.last = self.head
-    
+        
     def __str__(self):
         
         s = '('
@@ -63,9 +66,7 @@ class LinkedList:
          #   yield current
           #  current = current.next
         
-        
         self.pointer_for_iteration = self.pointer_for_iteration.next
-        
         
         if self.pointer_for_iteration == None:
             self.pointer_for_iteration = self.head
@@ -129,7 +130,7 @@ class LinkedList:
             
             if current_node == None:
                 raise 'overflow error'
-                
+            
         return current_node.data
     
     def paste(self,new_element,position):
@@ -146,8 +147,6 @@ class LinkedList:
             
             try:
             #if current_node.next == None:
-               
-            
             
                 current_node = current_node.next 
                 topical_position += 1
@@ -163,7 +162,6 @@ class LinkedList:
         self.len += 1
         
         return 0
-    
     
     def erase(self, position):
         
@@ -184,9 +182,6 @@ class LinkedList:
         current_node.next = current_node.next.next
         self.len -= 1
                 
-        
-    
-    
     def search(self, element):
         
         i = self.ground_index
@@ -201,7 +196,6 @@ class LinkedList:
                 return None
             
         return i
-
 
 
 if __name__ == '__main__':
