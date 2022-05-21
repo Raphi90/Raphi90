@@ -32,7 +32,6 @@ class LinkedList:
         self.ground_index = -1
         self.pointer_for_iteration = self.head
         self.len = 0
-        #self.last = self.head
         
     def __str__(self):
         
@@ -44,12 +43,10 @@ class LinkedList:
         
         while current_node != None:
             
-            if c >= 0:
-                
+            if c >= 0:                
                 if c > 0:
                  
                     s += ','
-                
                 s = s + str(current_node.data)
             
             current_node = current_node.next
@@ -59,12 +56,6 @@ class LinkedList:
         return s
         
     def __next__(self):
-        
-        #current = self.head
-        #while current.next != None:
-            
-         #   yield current
-          #  current = current.next
         
         self.pointer_for_iteration = self.pointer_for_iteration.next
         
@@ -89,28 +80,10 @@ class LinkedList:
         
         current_node.next = new_node
         self.len += 1
-        
-        #self.tail.data = data
-        
-        #return 0
-        
+                        
     def length(self):
-        """
-        length = 0
-        current_node = self.head
-        
-        
-        while current_node.next != None:
-            current_node = current_node.next
-            length += 1
-            
-        if length == self.len:
-            print('worked')
-        else:
-            print('fail')
-        """
+
         return self.len
-    
     
     def get(self,index):
         
@@ -123,7 +96,6 @@ class LinkedList:
         
         current_node = self.head
         
-        #while current_node.next != None:
         while i != index:
             current_node = current_node.next
             i += 1
@@ -146,8 +118,6 @@ class LinkedList:
         while topical_position != position:
             
             try:
-            #if current_node.next == None:
-            
                 current_node = current_node.next 
                 topical_position += 1
             
@@ -233,7 +203,6 @@ if __name__ == '__main__':
     print(List1.search(2))
     List1.paste(2, 2)
     print(List1)
-    #print(List1.search(10))
     
     for n in List1:
         if n == 8:
